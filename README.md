@@ -1,6 +1,6 @@
 # Шаблон экспертного заключения для LaTeX
 
-![Пример](/images/shablon.jpg)
+![Пример]([/images/shablon.jpg](https://github.com/SergSi/Report/blob/main/Images/Shablon.jpg))
 
 
 Этот репозиторий содержит профессиональный шаблон для оформления экспертных заключений, отчетов и исследовательских документов в системе LaTeX.
