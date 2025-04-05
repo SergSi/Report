@@ -51,24 +51,17 @@
    ```
    pip install -r scripts/requirements.txt
    ```
+   
 2. Для сборки документа выполните:
    ```
    python scripts/build.py
-   ```
-3. Для очистки временных файлов:
-   ```
-   python scripts/clean.py
-   ```
-4. Для подготовки финальной версии (PDF + архив):
-   ```
-   python scripts/deploy.py
    ```
 
 ## Примеры использования
 
 ### Вставка изображений
 ```tex
-\insertimage{images/diagrams/scheme.pdf}{Подпись к изображению}
+\insertimage{images/scheme.pdf}{Подпись к изображению}
 \insertimage[width=0.5\textwidth]{images/photo.jpg}{Изображение с измененным размером}
 ```
 
@@ -87,6 +80,5 @@
 
 ## Контакты
 
-По вопросам использования и доработки шаблона обращайтесь:
-- Email: info@example.com
-- Телефон: +7 (XXX) XXX-XX-XX
+По вопросам использования обращайтесь:
+- Email: cgles@yandex.ru
