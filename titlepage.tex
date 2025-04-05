@@ -1,0 +1,58 @@
+\begin{titlepage}
+    \begin{center}
+        % Установка увеличенного межстрочного интервала (1.3 от стандартного)
+        \setlength{\baselineskip}{1.3\baselineskip}
+        \setlength{\parskip}{0.5\baselineskip} % Дополнительный интервал между абзацами
+        
+        % Логотип организации
+        \IfFileExists{./images/logo.png}{
+            \includegraphics[width=0.2\textwidth]{images/logo.png}
+        }{
+            \vspace{0cm}
+            \textcolor{red}{Логотип не найден в папке images}
+            \vspace{1cm}
+        }
+        
+        \vspace{0.5cm}
+        
+        % Наименование организации
+        {\fontsize{16}{18}\selectfont \textbf{Межрегиональная общественная организация "Национальный союз землепользователей"}}
+        
+        \vspace{0cm} % Увеличенный интервал
+        
+        % Контактные данные организации
+        {\fontsize{12}{14}\selectfont 
+        125009, г. Москва, пер. Старопименовский, д. 13, стр 4\\[3pt] % Добавлен небольшой отступ
+        Тел.: +7 (915) 123-45-67\\[3pt]
+        Email: info@nsz.su\\[3pt]
+        Сайт: https://nsz.su/}
+        
+        \vspace{1cm} % Увеличенный интервал
+        
+        % Название документа
+        {\fontsize{20}{24}\selectfont \textbf{ЭКСПЕРТНЫЙ ОТЧЕТ}}
+        
+        \vspace{0.5cm} % Увеличенный интервал
+        
+        % Название территории
+        {\fontsize{16}{18}\selectfont 
+        по исследованию землепользования\\[5pt] % Добавлен отступ
+        \textbf{Коломенского рыбхоза "Осенка"}}
+        
+        \vspace{2cm} % Увеличенный интервал
+        
+	% Данные эксперта
+	{\fontsize{12}{14}\selectfont
+	\begin{tabularx}{0.9\textwidth}{@{}>{\bfseries}lX@{}}
+    	Эксперт: & Иванов Иван Иванович \\[5pt]
+    	Должность: & Эксперт землеустроитель и гидролог \\[5pt]
+    	Контактные данные: & \texttt{+7 (916) 123-45-67}, \texttt{expert@yandex.ru} \\[5pt]            
+	\end{tabularx}
+	}
+        
+        \vfill
+        
+        % Дата
+        {\fontsize{12}{14}\selectfont Москва, \the\year\ г.}
+    \end{center}
+\end{titlepage}
