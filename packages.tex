@@ -1,27 +1,108 @@
-\usepackage{anyfontsize}
-\usepackage{cmap}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english,russian]{babel}
-\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext}
-\usepackage{graphicx}
-\usepackage[colorlinks,linkcolor=blue]{hyperref}
+% ===== Базовые настройки для XeLaTeX =====
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+
+% ===== Основные шрифты =====
+\setmainfont{Times New Roman}[
+    UprightFont = *,
+    BoldFont = * Bold,
+    ItalicFont = * Italic,
+    BoldItalicFont = * Bold Italic,
+    Ligatures = TeX
+]
+
+% Определяем моноширинный шрифт с поддержкой кириллицы
+\newfontfamily\cyrillicfonttt{Courier New} % Для Windows
+% Альтернативы:
+% \newfontfamily\cyrillicfonttt{DejaVu Sans Mono} % Для Linux
+% \newfontfamily\cyrillicfonttt{PT Mono} % Если установлен
+
+% ===== Математические пакеты =====
+\usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools}
 \usepackage{physics}
 \usepackage{esvect}
 \usepackage{icomma}
-\usepackage{tabularx} % Добавлено
-%\usepackage{indentfirst} удаление отступа первой строки
-\usepackage[labelsep=period,justification=centering]{caption}
+
+% ===== Графика и таблицы =====
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+% ===== Оформление документа =====
+\usepackage[labelsep=period, justification=centering]{caption}
 \captionsetup[table]{font=large}
 \captionsetup[figure]{font=large}
-\usepackage{multirow}
-\renewcommand{\baselinestretch}{1.25}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,headheight=1cm]{geometry}
+
+% ===== Настройки страницы =====
+\usepackage[
+    left=2cm,
+    right=2cm,
+    top=2cm,
+    bottom=2cm,
+    headheight=1cm
+]{geometry}
+
+% ===== Колонтитулы =====
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyhead[R]{Экспертное заключение}
+\fancyhead[R]{\normalfont\bfseries Экспертное заключение}
 \fancyfoot[C]{\thepage}
-\renewcommand{\normalsize}{\fontsize{14.4pt}{17.4pt}\selectfont}
-\usepackage{enumitem}
-\setlist{nosep} % Убирает все лишние промежутки
+\renewcommand{\headrulewidth}{0.4pt}
+\pagestyle{fancy}
 
+% ===== Компактные списки =====
+\usepackage{enumitem}
+
+% Основные настройки списков
+\setlist{
+    nosep,
+    noitemsep,
+    topsep=0pt,
+    partopsep=0pt,
+    labelsep=0.5em
+}
+
+% Специальные настройки для разных уровней вложенности
+\setlist[enumerate,1]{
+    leftmargin=25pt,    % Отступ для первого уровня (1., 2.)
+    itemindent=0pt      % Отступ текста пунктов
+}
+
+\setlist[enumerate,2]{
+    leftmargin=32pt,    % Увеличенный отступ для второго уровня (1.1, 1.2)
+    itemindent=0pt
+}
+
+\setlist[enumerate,3]{
+    leftmargin=35pt,    % Отступ для третьего уровня (а), б))
+    itemindent=0pt
+}
+
+% ===== Настройки шрифта =====
+\renewcommand{\baselinestretch}{1.25}
+\renewcommand{\normalsize}{\fontsize{14}{16}\selectfont}
+
+% ===== Гиперссылки =====
+\usepackage[colorlinks, linkcolor=blue]{hyperref}
+\hypersetup{
+    pdftitle={Экспертное заключение},
+    pdfauthor={Автор}
+}
+
+\usepackage{indentfirst} % Обычно добавляет отступ первому абзацу
+\makeatletter
+\let\@afterindentfalse\@afterindentfalse
+\def\@afterheading{%
+  \@nobreaktrue
+  \everypar{%
+    \if@nobreak
+      \@nobreakfalse
+      \clubpenalty\@M
+      \setbox\z@\lastbox % Удаляет отступ
+    \else
+      \clubpenalty\@clubpenalty
+      \everypar{}%
+    \fi}}
+\makeatother
