@@ -1,89 +1,136 @@
-\section*{Списки}
-\begin{easylist}
-& Перечень исследуемых документов (в хронологической последовательности):
-&& -- правоустанавливающие документы;
-&& -- правоудостоверяющие документы;
-&& -- градостроительные документы;
-&& -- документы, полученные из открытых источников;
-&& -- другие документы, полученные от заказчика.
-& Содержание документов
-& Описание территории:
-&& -- местоположение;
-&& -- площадь;
-&& -- категория земель;
-&& -- вид разрешенного использования.
-\end{easylist}
+\documentclass[a4paper,12pt]{article}
+\usepackage{anyfontsize}
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext}
+\usepackage{graphicx}
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+\usepackage{physics}
+\usepackage{esvect}
+\usepackage{icomma}
+%\usepackage{indentfirst} удаление отступа первой строки
+\usepackage[labelsep=period,justification=centering]{caption}
+\captionsetup[table]{font=large}
+\captionsetup[figure]{font=large}
+\usepackage{multirow}
+\title{Экспертное заключение}
+\author{Сергей Иванов}
+\date{\today}
+\renewcommand{\baselinestretch}{1.25}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,headheight=1cm]{geometry}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[R]{Экспертное заключение}
+\fancyfoot[C]{\thepage}
+\renewcommand{\normalsize}{\fontsize{14.4pt}{17.4pt}\selectfont}
 
-\begin{easylist}
-& 1. Анализ текущего состояния земель: 
-&& а) сбор данных, натурное обследование; 
-&& б) изучение намерений;
-&& в) проверка достоверности представленных материалов;
-&& г) адаптация информации для заинтересованных лиц.
-& 2. Выявление возможностей и ограничений (факторный анализ):
-&& а) систематизация данных;
-&& б) определение факторов, влияющих на землепользование; 
-\end{easylist}
+\begin{document}
+\pagestyle{fancy}% Оформление колонитутлов
 
-\begin{easylist}
-& 1. Первый уровень (текст без маркера)
-&& 1.1. Выделенные условия землепользования сравниваются между собой, выявляются несоответствия условий. Выявленные несоответствия оцениваются, систематизируются. Оценивается готовность
-действующих лиц к преодолению ограничений.
-&&& а) Третий уровень (детализация без маркера)
-&&& б) Еще один пункт третьего уровня
-&& 2.1 Другой подпункт второго уровня
-& 2. Основной пункт без маркера
-&& 2.1 Подраздел без маркера
-\end{easylist}
+\maketitle
 
-\section*{Примеры изображений}
+\tableofcontents
 
-% Простой вариант
-\insertimage{example-image.pdf}{Схема работы алгоритма}
 
-% С дополнительными параметрами
-\insertimage[width=0.5\textwidth,angle=90]{photo.jpg}{Пример повернутого изображения}
+\section{Шрифт текста} 
 
-\paragraph{Параграф} Пример параграфа в документе. Текст параграфа может содержать различные элементы оформления.
+\textbf{текст, который вы хотите сделать полужирным}
+\textit{текст, который вы хотите выделить курсивом}
+\underline{текст, который вы хотите подчеркнуть}
 
-\subparagraph{Подпараграф} Пример подпараграфа с дополнительными уточнениями.
+{\Huge шрифт, размер которого намного больше стандартного}
+{\huge шрифт, размер которого сильно больше стандартного}
+{\LARGE шрифт, размер которого значительно больше стандартного}
+{\Large шрифт, размер которого немного больше стандартного}
+{\large шрифт, размер которого чуть больше стандартного}
+{\small шрифт, размер которого чуть меньше стандартного}
+{\footnotesize шрифт, размер которого немного меньше стандартного}
+{\scriptsize шрифт, размер которого значительно меньше стандартного}
+{\tiny шрифт, размер которого намного меньше стандартного}
 
-\section*{Математические выражения}
-\label{sec:math}
+Cайт \href{https://kadinfo.ru}{<<Искусство землепользования>>} очень полезен.
 
-Пример математического выражения в тексте: $E = mc^2$.
+Название сайта \href{https://kadinfo.ru}{``Искусство землепользования``} заключено в кавычки.
 
-Уравнение в выключной формуле:
-\begin{equation}
-    \label{eq:1}
-    \int_{-\infty}^\infty e^{-x^2} dx = \sqrt{\pi}
-\end{equation}
+\section{Списки} 
 
-Система уравнений:
-\[
-\begin{cases}
-    \frac{dx}{dt} = \sigma(y - x) \\
-    \frac{dy}{dt} = x(\rho - z) - y \\
-    \frac{dz}{dt} = xy - \beta z
-\end{cases}
-\]
+\subsection*{Нумерованный список} 
 
-\section*{Пример таблицы}
-\label{sec:table}
+\begin{enumerate}
+    \item Первый элемент списка
+    \item Второй элемент списка
+    \item Третий элемент списка
+\end{enumerate}
+
+
+\subsection*{Маркированный список}
+\addcontentsline{toc}{subsection}{Пример маркированного списка}
+
+\begin{itemize}
+    \item[--] Первый элемент списка
+    \item[--] Второй элемент списка
+    \item[--] Третий элемент списка
+\end{itemize}
+
+\section{Таблицы} 
+\subsection*{Простая таблица} 
+\begin{table}[h]
+    \centering
+    \caption{Название таблицы}
+    \begin{tabular}{||c|l||}
+        \hline
+        Теорема Пифагора & всегда верна \\
+        Теорема косинусов & тоже верна \\
+        \hline
+    \end{tabular}
+    \label{tab:1}
+\end{table}
+\subsection*{Объединение ячеек} 
+
+Координаты объекта приведены в таблице \ref{tab:1}
 
 \begin{table}[h]
     \centering
-    \caption{Пример таблицы с границами}
-    \label{tab:example}
-    \begin{tabular}{|l|c|r|}
+    \caption{Название таблицы}
+    \begin{tabular}{|c|c|}
         \hline
-        Заголовок 1 & Заголовок 2 & Заголовок 3 \\
+        \multicolumn{2}{|c|}{Физические величины} \\
         \hline
-        Данные 1 & Данные 2 & Данные 3 \\
+        Скалярные & величины \\
         \hline
-        Данные 4 & Данные 5 & Данные 6 \\
+        Векторные & величины \\
+        \hline
+        Тензорные & значения \\
         \hline
     \end{tabular}
+    \label{tab:2}
 \end{table}
 
-В таблице \ref{tab:example} представлен пример оформления таблицы с границами.
+\section{Рисунки}
+Изображение ситуации на объекте исследования приведено на рисунке \ref{fig:1}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/photo.jpg}
+    \caption{Ситуационный план}
+    \label{fig:1}
+\end{figure}
+
+\section{Оформление страницы} 
+
+\begin{minipage}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{images/photo.jpg}
+    \captionof{figure}{Ситуация}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{images/photo2.jpg}
+    \captionof{figure}{Фотография}
+\end{minipage}
+\begin{minipage}[c]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{images/photo3.pdf}
+    \captionof{figure}{Обложка}
+\end{minipage}
+
+\end{document}

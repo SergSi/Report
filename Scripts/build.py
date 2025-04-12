@@ -39,10 +39,26 @@ def compile_latex(tex_path, compiler='xelatex'):
                 cwd=working_dir,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
-                text=True,
-                encoding='utf-8'
+                # Убрали text=True и явное указание кодировки
+                universal_newlines=True  # Для совместимости
             )
             stdout, stderr = proc.communicate(timeout=60)
+            
+            # Декодируем вывод с учетом возможных ошибок
+            def safe_decode(byte_str):
+                try:
+                    return byte_str.decode('utf-8')
+                except UnicodeDecodeError:
+                    try:
+                        return byte_str.decode('cp1251')
+                    except UnicodeDecodeError:
+                        return byte_str.decode('cp866', errors='replace')
+            
+            if isinstance(stdout, bytes):
+                stdout = safe_decode(stdout)
+            if isinstance(stderr, bytes):
+                stderr = safe_decode(stderr)
+                
             print("✓ Первая компиляция завершена")
         except subprocess.TimeoutExpired:
             proc.kill()
@@ -54,9 +70,14 @@ def compile_latex(tex_path, compiler='xelatex'):
         with open(log_file, 'w', encoding='utf-8') as f:
             f.write(f"=== Компилятор: {compiler} ===\n")
             f.write("=== STDOUT ===\n")
-            f.write(stdout)
+            if stdout:
+                f.write(stdout)
             f.write("\n=== STDERR ===\n")
-            f.write(stderr)
+            if stderr:
+                f.write(stderr)
+        
+        # Остальной код функции остается без изменений
+        # ...
         
         # Проверка ошибок
         if proc.returncode != 0:

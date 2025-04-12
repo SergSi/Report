@@ -1,88 +1,27 @@
-% Базовые настройки для русского языка
-\usepackage{iftex}
-
-\ifXeTeX
-  \usepackage{fontspec}
-  \setmainfont{Times New Roman}
-\else
-  \usepackage[T2A]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{cmap}
-\fi
-
-\usepackage[russian]{babel}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{xcolor}
+\usepackage{anyfontsize}
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathtext}
 \usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage{booktabs}
-\usepackage{abstract}
-\usepackage{geometry}
-\usepackage{microtype}
-\usepackage{advanced_image_template}
-\usepackage{type1cm}
-\usepackage{titlesec}
-\usepackage[ampersand]{easylist}
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+\usepackage{physics}
+\usepackage{esvect}
+\usepackage{icomma}
+\usepackage{tabularx} % Добавлено
+%\usepackage{indentfirst} удаление отступа первой строки
+\usepackage[labelsep=period,justification=centering]{caption}
+\captionsetup[table]{font=large}
+\captionsetup[figure]{font=large}
+\usepackage{multirow}
+\renewcommand{\baselinestretch}{1.25}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,headheight=1cm]{geometry}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[R]{Экспертное заключение}
+\fancyfoot[C]{\thepage}
+\renewcommand{\normalsize}{\fontsize{14.4pt}{17.4pt}\selectfont}
+\usepackage{enumitem}
+\setlist{nosep} % Убирает все лишние промежутки
 
-% Полное отключение маркеров
-\ListProperties(
-    Hide=1000,               % Скрыть все уровни
-    Progressive*=1.5em,      % Отступы без маркеров
-    Style1*={},              % Пустой стиль для 1 уровня
-    Style2*={},              % Пустой стиль для 2 уровня
-    Style3*={}               % Пустой стиль для 3 уровня
-)
-
-\geometry{
-  left=3cm,
-  right=2cm,
-  top=2cm,
-  bottom=2cm,
-  a4paper
-}
-
-% Настройки шрифта
-\renewcommand{\normalsize}{\fontsize{13pt}{15.6pt}\selectfont}
-\AtBeginDocument{
-   \renewcommand{\small}{\fontsize{11pt}{13.2pt}\selectfont}
-   \renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont}
-   \renewcommand{\large}{\fontsize{14pt}{16.8pt}\selectfont}
-}
-
-% Настройки списков
-\setlist{
-  topsep=0.5\baselineskip,
-  partopsep=0pt,
-  parsep=0pt,
-  itemsep=0.25\baselineskip
-}
-
-\setlist[itemize]{%
-  label={},
-  leftmargin=1.5em,
-  itemindent=0em,
-  labelsep=0.5em,
-  align=parleft
-}
-
-\setlist[enumerate]{%
-  label={},
-  leftmargin=2em,
-  itemindent=0em,
-  labelsep=0.5em
-}
-
-\setlist[description]{%
-  labelindent=0em,
-  leftmargin=2em,
-  itemindent=0em,
-  labelsep=0.5em,
-  style=sameline,
-  font=\normalfont
-}
-
-% Настройки переносов
-\emergencystretch=3em
-\hyphenpenalty=1000
-\tolerance=500
