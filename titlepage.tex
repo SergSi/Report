@@ -1,8 +1,8 @@
 \begin{titlepage}
     \begin{center}
-        % Установка увеличенного межстрочного интервала (1.3 от стандартного)
+        % Установка увеличенного межстрочного интервала
         \setlength{\baselineskip}{1.3\baselineskip}
-        \setlength{\parskip}{0.5\baselineskip} % Дополнительный интервал между абзацами
+        \setlength{\parskip}{0.5\baselineskip}
         
         % Логотип организации
         \IfFileExists{./images/logo.png}{
@@ -16,43 +16,41 @@
         \vspace{0.5cm}
         
         % Наименование организации
-        {\fontsize{16}{18}\selectfont \textbf{Межрегиональная общественная организация \\"Национальный союз землепользователей"}}
+        {\fontsize{16}{18}\selectfont \textbf{\OrganizationName}}
         
-        \vspace{0cm} % Увеличенный интервал
+        \vspace{0cm}
         
         % Контактные данные организации
         {\fontsize{12}{14}\selectfont 
-        125009, г. Москва, пер. Старопименовский, д. 13, стр 4\\[3pt] % Добавлен небольшой отступ
-        Тел.: +7 (915) 123-45-67\\[3pt]
-        Email: info@nsz.su\\[3pt]
-        Сайт: https://nsz.su/}
+        \OrganizationAddress\\[3pt]
+        Тел.: \OrganizationPhone\\[3pt]
+        Email: \OrganizationEmail\\[3pt]
+        Сайт: \OrganizationWebsite}
         
-        \vspace{1cm} % Увеличенный интервал
+        \vspace{1cm}
         
         % Название документа
-        {\fontsize{20}{24}\selectfont \textbf{ЭКСПЕРТНЫЙ ОТЧЕТ}}
+        {\fontsize{20}{24}\selectfont \textbf{\ReportTitle}}
         
-        \vspace{0.5cm} % Увеличенный интервал
+        \vspace{0.5cm}
         
         % Название территории
-        {\fontsize{16}{18}\selectfont 
-        по исследованию землепользования\\[5pt] % Добавлен отступ
-        \textbf{Коломенского рыбхоза "Осенка"}}
+        {\fontsize{16}{18}\selectfont \ReportSubject}
         
-        \vspace{2cm} % Увеличенный интервал
+        \vspace{2cm}
         
-	% Данные эксперта
-	{\fontsize{12}{14}\selectfont
-	\begin{tabularx}{0.9\textwidth}{@{}>{\bfseries}lX@{}}
-    	Эксперт: & Иванов Иван Иванович \\[5pt]
-    	Должность: & Эксперт землеустроитель и гидролог \\[5pt]
-    	Контактные данные: & \texttt{+7 (916) 123-45-67}, \texttt{expert@yandex.ru} \\[5pt]            
-	\end{tabularx}
-	}
+        % Данные эксперта
+        {\fontsize{12}{14}\selectfont
+        \begin{tabularx}{0.9\textwidth}{@{}>{\bfseries}lX@{}}
+            Эксперт: & \ExpertName \\[5pt]
+            Должность: & \ExpertPosition \\[5pt]
+            Контактные данные: & \ExpertContacts \\[5pt]            
+        \end{tabularx}
+        }
         
         \vfill
         
         % Дата
-        {\fontsize{12}{14}\selectfont Москва, \the\year\ г.}
+        {\fontsize{12}{14}\selectfont \ReportCity, \ReportYear\ г.}
     \end{center}
 \end{titlepage}

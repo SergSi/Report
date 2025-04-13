@@ -30,6 +30,7 @@
 ├── bibpage.tex                # Библиография и нормативные документы
 ├── content.tex                # Основное содержание документа
 ├── main.tex                   # Главный файл для компиляции
+├── metadata.tex               # Файл с настройками титульной страницы, заголовка, дат
 ├── packages.tex               # Настройки пакетов и стилей
 ├── primer.tex                 # Примеры использования элементов
 └── titlepage.tex              # Шаблон титульного листа
@@ -60,7 +61,6 @@
    python md_tex.py из папки Scripts или запустите md_tex.exe из папки Scripts\dist
    ```
    
-
 2. Для конвертации md файла в tex (конвертируется только основной текст без преамбулы tex):
 
    ```
@@ -69,26 +69,106 @@
 
 ## Примеры использования
 
-
-
-## Примеры использования
-
-### Вставка изображений
+### Вставка изображения  с подписью и ссылкой на него
 ```tex
-\insertimage{images/scheme.pdf}{Подпись к изображению}
+На Рисунке~\ref{fig:example} показан пример изображения.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/example.jpg}
+    \caption{Пример изображения с подписью.}
+    \label{fig:example}
+\end{figure}\insertimage{images/scheme.pdf}{Подпись к изображению}
 \insertimage[width=0.5\textwidth]{images/photo.jpg}{Изображение с измененным размером}
 ```
 
-### Многоуровневые списки
+### Вставка изображения  с подписью
+
 ```tex
-\begin{easylist}
-& 1. Первый уровень
-&& 1.1. Второй уровень
-&&& а) Третий уровень
-\end{easylist}
+% Изображение из локальной папки 'images'
+\centering
+\includegraphics[width=0.8\textwidth]{images/example.jpg} % Путь к файлу
+\captionof{figure}{Пример изображения с подписью без использования figure.} % Подпись
+\label{fig:mylabel} % Метка для ссылки
+
+% Ссылка в тексте
+На Рис.~\ref{fig:mylabel} показан пример.
+
+% Альтернативный вариант (если нет caption):
+\begin{center}
+  \includegraphics[width=0.6\textwidth]{images/example.jpg} \\
+  \small\textit{Рис. 1: Пример подписи вручную.}
+\end{center}
 ```
 
-## Параметры для WORD
+### Три  изображения в ряд
+
+```tex
+\begin{minipage}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{images/photo.jpg}
+    \captionof{figure}{Ситуация}
+\end{minipage}
+\begin{minipage}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{images/photo2.jpg}
+    \captionof{figure}{Фотография}
+\end{minipage}
+\begin{minipage}[c]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{images/photo3.pdf}
+    \captionof{figure}{Обложка}
+\end{minipage}
+```
+
+### Многоуровневые списки
+
+```tex
+\begin{enumerate}
+    \item[1.] Первый уровень:
+    \begin{itemize}
+        \item[а)] второй уровень (маркированный);
+        \item[б)] еще один пункт.
+    \end{itemize}
+    \item[2.] Снова первый уровень (нумерованный).
+\end{enumerate}
+```
+
+### Таблица с заголовком и ссылкой
+
+```tex
+% Сыылка на таблицу в тексте:
+В Таблице~\ref{tab:example} представлены данные.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Название таблицы.}
+    \label{tab:example}
+    \begin{tabular}{|l|c|r|}
+        \hline
+        \textbf{Заголовок 1} & \textbf{Заголовок 2} & \textbf{Заголовок 3} \\
+        \hline
+        Данные 1 & Данные 2 & Данные 3 \\
+        \hline
+    \end{tabular}
+\end{table}
+```
+
+
+### Оформление списка использованной литературы в файле  bibpage.tex
+
+```tex
+% ссылка на источник в тектсте
+В работе использованы методики, описанные в \cite{Butyrin2007}, 
+а также требования \cite{SP42.13330.2016}.
+
+\bibitem{Butyrin2007}
+Бутырин А.Ю. 
+\textit{Методики исследования объектов судебной строительно-технической экспертизы: межевых границ земельных участков. Методика утверждена научно-методическим советом Российского федерального центра судебной экспертизы при Минюсте России.}. 
+М., 2007.
+\bibitem{SP42.13330.2016}
+СП 42.13330.2016. Свод правил. Градостроительство. Планировка и застройка городских и сельских поселений. 
+Актуализированная редакция СНиП 2.07.01-89* (утв. Приказом Минстроя России от 30.12.2016 № 1034/пр) (ред. от 19.12.2019).
+```
+
+## Параметры документа для WORD
 
 ### **1. Общие параметры страницы**
 - **Размер бумаги**: A4.

@@ -84,11 +84,14 @@
 \renewcommand{\baselinestretch}{1.25}
 \renewcommand{\normalsize}{\fontsize{14}{16}\selectfont}
 
+
 % ===== Гиперссылки =====
 \usepackage[colorlinks, linkcolor=blue]{hyperref}
-\hypersetup{
-    pdftitle={Экспертное заключение},
-    pdfauthor={Автор}
+\AtBeginDocument{
+    \hypersetup{
+        pdftitle={\ReportTitle},
+        pdfauthor={\ExpertName}
+    }
 }
 
 \usepackage{indentfirst} % Обычно добавляет отступ первому абзацу
