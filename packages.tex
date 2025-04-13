@@ -109,3 +109,18 @@
       \everypar{}%
     \fi}}
 \makeatother
+
+\usepackage{titling}
+\usepackage{abstract}
+\usepackage{tocloft}
+\usepackage{setspace} % Для \setstretch
+
+% Настройка \maketitle
+\renewcommand{\maketitlehooka}{\setstretch{1.0}}
+
+\usepackage{abstract}
+\renewcommand{\abstracttextfont}{\normalfont\small\setstretch{1.0}}
+
+% Настройка оглавления
+\renewcommand{\cftbeforesecskip}{2pt}
+\renewcommand{\cftbeforesubsecskip}{1pt}
