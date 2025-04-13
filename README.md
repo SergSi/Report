@@ -261,3 +261,4 @@
 
 По вопросам использования обращайтесь:
 - Email: cgles@yandex.ru
+- Telegram-группа: https://t.me/+X0UTMC7_X48xZjIy
