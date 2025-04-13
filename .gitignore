@@ -1,0 +1,29 @@
+# LaTeX auxiliary files
+*.log
+*.aux
+*.out
+*.toc
+
+# Other LaTeX generated files
+*.bbl
+*.blg
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.bcf
+*.run.xml
+
+# Backup files
+*~
+*.backup
+*.bak
+
+# Output files (PDF can be included if desired)
+# Uncomment next line to exclude PDFs
+# *.pdf
