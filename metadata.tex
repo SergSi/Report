@@ -3,7 +3,7 @@
 % Организация
 \newcommand{\DefaultOrganizationName}{Межрегиональная общественная организация \"Национальный союз землепользователей\"}
 \newcommand{\DefaultOrganizationAddress}{125009, г. Москва, пер. Старопименовский, д. 13, стр 4}
-\newcommand{\DefaultOrganizationPhone}{+7 (915) 123-45-67}
+\newcommand{\DefaultOrganizationPhone}{+7(915)123-45-67}
 \newcommand{\DefaultOrganizationEmail}{info@nsz.su}
 \newcommand{\DefaultOrganizationWebsite}{https://nsz.su/}
 
@@ -21,7 +21,6 @@
 
 % Колонтитулы
 \newcommand{\DefaultHeaderText}{Экспертное заключение}
-
 
 % ===== АКТИВНЫЕ ПЕРЕМЕННЫЕ (МОГУТ ПЕРЕОПРЕДЕЛЯТЬСЯ) =====
 
@@ -47,3 +46,19 @@
 % Колонтитулы
 \newcommand{\HeaderText}{\DefaultHeaderText}
 
+% ===== Данные для заголовка документа =====
+ \title{
+     \LARGE\textbf{\ReportTitle} \\
+     \large\textit{\ReportSubject}
+ }
+ 
+ \author{
+     \small\textbf{\ExpertName} \\[4pt]
+     \small \ExpertPosition \\
+     \small \OrganizationName \\
+     \small {E-mail: \OrganizationEmail}, \small {Тел.: \OrganizationPhone}
+ }
+ 
+ \date{
+     \small\textbf{\ReportDate} \\[4pt]
+ }
