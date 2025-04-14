@@ -119,3 +119,29 @@
 % Настройка оглавления
 \renewcommand{\cftbeforesecskip}{2pt}
 \renewcommand{\cftbeforesubsecskip}{1pt}
+
+% Настройка заголовков
+\usepackage{titlesec}
+% Настройки заголовков
+\titleformat{\section}
+    {\normalfont\large\bfseries}
+    {\thesection}
+    {1em}
+    {}
+
+\titleformat{\subsection}
+    {\normalfont\normalsize\bfseries}
+    {\thesubsection}
+    {1em}
+    {}
+
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\itshape}
+    {\thesubsubsection}
+    {1em}
+    {}
+
+% Отступы вокруг заголовков
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\subsection}{0pt}{8pt}{4pt}
+\titlespacing*{\subsubsection}{0pt}{6pt}{2pt}
