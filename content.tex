@@ -1,3 +1,9 @@
+% ===== Данные для заголовка =====
+
+\renewcommand{\ReportTitle}{ЭКСПЕРТНЫЙ ОТЧЕТ}
+\renewcommand{\ReportSubject}{по исследования землепользования Коломенского рыбхоза "Осенка"}
+\renewcommand{\ReportDate}{12 апреля 2025}
+
 % ===== Титульная страница =====
 \begin{titlepage}
      \begin{center}
@@ -31,12 +37,12 @@
          \vspace{1cm}
          
          % Название документа
-         {\fontsize{20}{24}\selectfont \textbf{ЭКСПЕРТНЫЙ ОТЧЕТ}}
+         {\fontsize{20}{24}\selectfont \textbf{\ReportTitle}}
          
          \vspace{0.5cm}
          
          % Название территории
-         {\fontsize{16}{18}\selectfont по исследованию землепользования\\[5pt] \textbf{Коломенского рыбхоза "Осенка"}}
+         {\fontsize{16}{18}\selectfont \ReportSubject}
          
          \vspace{2cm}
          
@@ -58,8 +64,8 @@
 
 % ===== Основной заголовок документа =====
 \title{
-    \LARGE\textbf{Экспертное заключение} \\
-    \large\textit{Возможности оформления пользования водными объектами на землях сельскохозяйственного назначения}
+    \LARGE\textbf{\ReportTitle} \\
+    \large\textit{\ReportSubject}
 }
 
 \author{
@@ -70,7 +76,7 @@
 }
 
 \date{
-    \small\textbf{10 апреля 2025~г.} \\[4pt]
+    \small\textbf{\ReportDate} \\[4pt]
 }
 
 % ===== Начало основного содержания документа =====

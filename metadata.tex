@@ -1,14 +1,49 @@
-% ===== Данные для титульной страницы =====
-\newcommand{\OrganizationName}{Межрегиональная общественная организация \\"Национальный союз землепользователей"}
-\newcommand{\OrganizationAddress}{125009, г. Москва, пер. Старопименовский, д. 13, стр 4}
-\newcommand{\OrganizationPhone}{+7 (915) 123-45-67}
-\newcommand{\OrganizationEmail}{info@nsz.su}
-\newcommand{\OrganizationWebsite}{https://nsz.su/}
-\newcommand{\ExpertName}{Иванов Иван Иванович}
-\newcommand{\ExpertPosition}{Эксперт землеустроитель}
-\newcommand{\ExpertContacts}{\texttt{+7(916)123-45-67}, \texttt{expert@yandex.ru}}
-\newcommand{\ReportCity}{Москва}
-\newcommand{\ReportYear}{\the\year}
+% ===== БАЗОВЫЕ (ДЕФОЛТНЫЕ) ЗНАЧЕНИЯ =====
 
-% ===== Настройки колонтитулов =====
-\newcommand{\HeaderText}{Экспертное заключение}
+% Организация
+\newcommand{\DefaultOrganizationName}{Межрегиональная общественная организация \"Национальный союз землепользователей\"}
+\newcommand{\DefaultOrganizationAddress}{125009, г. Москва, пер. Старопименовский, д. 13, стр 4}
+\newcommand{\DefaultOrganizationPhone}{+7 (915) 123-45-67}
+\newcommand{\DefaultOrganizationEmail}{info@nsz.su}
+\newcommand{\DefaultOrganizationWebsite}{https://nsz.su/}
+
+% Эксперт
+\newcommand{\DefaultExpertName}{Иванов Иван Иванович}
+\newcommand{\DefaultExpertPosition}{Эксперт землеустроитель}
+\newcommand{\DefaultExpertContacts}{\texttt{+7(916)123-45-67}, \texttt{expert@yandex.ru}}
+
+% Отчёт
+\newcommand{\DefaultReportTitle}{ЭКСПЕРТНЫЙ ОТЧЕТ}
+\newcommand{\DefaultReportSubject}{по исследованию землепользования}
+\newcommand{\DefaultReportCity}{Москва}
+\newcommand{\DefaultReportYear}{\the\year}
+\newcommand{\DefaultReportDate}{\the\year}
+
+% Колонтитулы
+\newcommand{\DefaultHeaderText}{Экспертное заключение}
+
+
+% ===== АКТИВНЫЕ ПЕРЕМЕННЫЕ (МОГУТ ПЕРЕОПРЕДЕЛЯТЬСЯ) =====
+
+% Организация
+\newcommand{\OrganizationName}{\DefaultOrganizationName}
+\newcommand{\OrganizationAddress}{\DefaultOrganizationAddress}
+\newcommand{\OrganizationPhone}{\DefaultOrganizationPhone}
+\newcommand{\OrganizationEmail}{\DefaultOrganizationEmail}
+\newcommand{\OrganizationWebsite}{\DefaultOrganizationWebsite}
+
+% Эксперт
+\newcommand{\ExpertName}{\DefaultExpertName}
+\newcommand{\ExpertPosition}{\DefaultExpertPosition}
+\newcommand{\ExpertContacts}{\DefaultExpertContacts}
+
+% Отчёт
+\newcommand{\ReportTitle}{\DefaultReportTitle}
+\newcommand{\ReportSubject}{\DefaultReportSubject}
+\newcommand{\ReportCity}{\DefaultReportCity}
+\newcommand{\ReportYear}{\DefaultReportYear}
+\newcommand{\ReportDate}{\DefaultReportDate}
+
+% Колонтитулы
+\newcommand{\HeaderText}{\DefaultHeaderText}
+
