@@ -3,6 +3,7 @@
 *.aux
 *.out
 *.toc
+*.pdf
 
 # Other LaTeX generated files
 *.bbl
@@ -26,4 +27,3 @@
 
 # Output files (PDF can be included if desired)
 # Uncomment next line to exclude PDFs
-*.pdf
