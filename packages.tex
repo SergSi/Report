@@ -145,3 +145,8 @@
 \titlespacing*{\section}{0pt}{12pt}{6pt}
 \titlespacing*{\subsection}{0pt}{8pt}{4pt}
 \titlespacing*{\subsubsection}{0pt}{6pt}{2pt}
+
+% Настройка пунктов списка источников
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.} % Изменяем формат меток
+\makeatother
