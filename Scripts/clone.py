@@ -1,6 +1,5 @@
 import os
 import shutil
-import glob
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from datetime import datetime
@@ -72,8 +71,13 @@ def clone_and_clean():
     root.withdraw()
     
     # Выбираем исходную папку
-    source_dir = filedialog.askdirectory(title="Выберите папку для клонирования")
+    source_dir = filedialog.askdirectory(title="Выберите исходную папку для клонирования")
     if not source_dir:
+        return
+    
+    # Выбираем целевую папку
+    target_parent_dir = filedialog.askdirectory(title="Выберите папку, в которую нужно поместить клон")
+    if not target_parent_dir:
         return
     
     # Создаём имя для клона
@@ -83,8 +87,8 @@ def clone_and_clean():
     
     # Ищем свободное имя для клона
     while True:
-        new_name = f"{base_name}_{index}"
-        clone_dir = os.path.join(os.path.dirname(source_dir), new_name)
+        new_name = f"{base_name}_{index}" if index > 1 else base_name
+        clone_dir = os.path.join(target_parent_dir, new_name)
         if not os.path.exists(clone_dir):
             break
         index += 1

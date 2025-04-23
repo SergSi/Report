@@ -117,8 +117,11 @@
 \renewcommand{\abstracttextfont}{\normalfont\small\setstretch{1.0}}
 
 % Настройка оглавления
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % Добавляет точки для разделов первого уровня
 \renewcommand{\cftbeforesecskip}{2pt}
 \renewcommand{\cftbeforesubsecskip}{1pt}
+\renewcommand{\cftdotsep}{1} % Уменьшает расстояние между точками
+
 
 % Настройка заголовков
 \usepackage{titlesec}
